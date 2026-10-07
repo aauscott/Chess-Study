@@ -12,8 +12,8 @@ export const EXAMPLE_PGN = `[Event "Opera Game"]
 11. Bxb5+ Nbd7 12. O-O-O Rd8 13. Rxd7 Rxd7 14. Rd1 Qe6
 15. Bxd7+ Nxd7 16. Qb8+ Nxb8 17. Rd8# 1-0`;
 
-// Immutable positions let the viewer navigate without replaying moves. A future
-// analysis module can evaluate these FENs without depending on the interface.
+// Immutable positions let the viewer navigate without replaying moves, while
+// the analysis module can evaluate positions independently of the interface.
 export function parseGame(pgn) {
   if (!pgn.trim()) throw new Error('Paste a PGN or choose a .pgn file first.');
   if ((pgn.match(/\[Event\s+"/g) || []).length > 1) {
